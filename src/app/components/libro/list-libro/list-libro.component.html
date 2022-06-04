@@ -1,0 +1,42 @@
+<table mat-table [dataSource]="libros" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="titulo">
+      <th mat-header-cell *matHeaderCellDef> Titulo </th>
+      <td mat-cell *matCellDef="let element"> {{element.titulo}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="numeroPagina">
+      <th mat-header-cell *matHeaderCellDef> No Paginas </th>
+      <td mat-cell *matCellDef="let element"> {{element.numeroPagina}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="editorial">
+      <th mat-header-cell *matHeaderCellDef> Editorial </th>
+      <td mat-cell *matCellDef="let element"> {{element.editorial}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="isbn">
+      <th mat-header-cell *matHeaderCellDef> ISBN </th>
+      <td mat-cell *matCellDef="let element"> {{element.isbn}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="AutorId">
+      <th mat-header-cell *matHeaderCellDef> Autor </th>
+      <td mat-cell *matCellDef="let element"> {{element.AutorId}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

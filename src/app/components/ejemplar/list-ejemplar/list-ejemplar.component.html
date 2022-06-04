@@ -1,0 +1,26 @@
+<table mat-table [dataSource]="ejemplares" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="localizacion">
+      <th mat-header-cell *matHeaderCellDef> Localizacion </th>
+      <td mat-cell *matCellDef="let element"> {{element.localizacion}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="LibroId">
+      <th mat-header-cell *matHeaderCellDef> Libro </th>
+      <td mat-cell *matCellDef="let element"> {{element.LibroId}} </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
